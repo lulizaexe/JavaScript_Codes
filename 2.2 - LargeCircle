@@ -1,0 +1,29 @@
+// Random central square with a size that is a multiple of 50. Progressively smaller centered circles down to a diameter of 10 pixels, with a random color.
+
+int speed = 10;
+int i = 0;
+
+ 
+
+void setup()
+{
+ 
+
+ size(600,600);
+  background(0);  
+  frameRate(speed);
+  
+  frameCount = 500;
+   i = 0;
+   
+  while(i <= frameCount)
+  {
+      fill(random(252),random(252),random(252));
+      ellipseMode(CENTER);
+      ellipse(width/2,height/2,i,i);
+      i = i + 10;
+
+  }
+
+
+}
