@@ -1,0 +1,33 @@
+// Random central square with a size that is a multiple of 50. Circle that fills the entire rectangle and has a random color each time the game is played.
+
+int tamanho; 
+color cor;
+
+ 
+
+void setup()
+{
+ 
+
+  size(600,600);
+  background(0);
+  
+  tamanho = 400+50* (int) random (5);
+  
+
+  fill(255);
+    rectMode(CENTER);
+    rect(width/2,height/2,tamanho,tamanho);
+    
+    print(tamanho);
+  
+  cor = color (random(256),random(256),random(256));
+ 
+
+ 
+
+  fill(cor);  
+  ellipse(width/2, height/2, tamanho, tamanho);
+
+
+  }
