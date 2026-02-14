@@ -1,0 +1,98 @@
+// Four rectangles in random positions, representing cats:
+The first: Called Fluffy, white.
+The second: Called Sylvester, black.
+The third: Called Tom, gray.
+The fourth: Called Garfield, orange. //
+
+[File]
+Gato Felpudo, Frajola, Tom, Garfield;
+
+ 
+
+void setup()
+
+{
+  size(600,600);
+    
+  Felpudo = new Gato();
+  Felpudo.nome = "Felpudo";
+  Felpudo.cor = "Branco";
+  
+  println(Felpudo.ToString());
+  
+  Frajola = new Gato();
+  Frajola.nome = "Frajola";
+  Frajola.cor = "Preto";
+  
+  println(Frajola.ToString());
+  
+  Tom = new Gato();
+  Tom.nome = "Tom";
+  Tom.cor = "Cinza";
+  
+  println(Tom.ToString());
+  
+  Garfield = new Gato();
+  Garfield.nome = "Garfield";
+  Garfield.cor = "Laranja";
+  
+  println(Garfield.ToString());
+  
+}
+
+​
+
+void draw()
+
+{
+  background(0,0,255);
+  
+  //Felpudo
+  fill(255);
+  Felpudo.Desenha();
+  
+  //Frajola
+  fill(0);
+  Frajola.Desenha();
+  
+  //Tom
+  fill(190);
+  Tom.Desenha();
+  
+  //Garfield
+  fill(255,69,0);
+  Garfield.Desenha();
+  
+}
+
+[Class]
+class Gato 
+{  
+
+
+  //atributos
+  String nome;
+  String cor;
+  float x;
+  float y;
+
+​
+
+  //metodos  
+  Gato()
+  {
+    nome = "";
+    cor = "";
+    x = (int)random(300);
+    y = (int)random(300);
+  }
+  
+  void Desenha() 
+  {
+    rect(x, y, 100, 50);
+  }
+
+  String ToString() {
+    return "nome:" + nome + "|X:" + x + "|Y:" + y + "|cor:" + cor;
+  }
+}
