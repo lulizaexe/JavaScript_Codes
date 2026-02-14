@@ -1,0 +1,29 @@
+//White rectangle centered on the screen.Gray circle that updates its position every frame, only within the central white rectangle.
+
+float x,y;
+
+void setup()
+{
+    size(600,600);
+    background(0);
+    frameRate(10);    
+
+}
+void draw()
+{
+    x = random(150,450);
+    y = random(150,450);
+    
+ 
+
+  background(0);
+
+  fill(255);
+    rectMode(CENTER);
+    rect(width/2,height/2,400,400);
+  
+  fill(150);
+  ellipse(x,y,100,100);
+
+
+  }
