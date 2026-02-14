@@ -1,0 +1,15 @@
+// White rectangle centered on the screen. Gray circle that updates its position with each new play, across the entire screen.
+
+float x,y;
+  x = random(600);
+  y = random(600);
+  
+  size(600,600);
+  background(0);
+
+  fill(255);
+  rectMode(CENTER);
+  rect(width/2,height/2,400,400);
+  
+  fill(150);
+  ellipse(x,y,100,100);
