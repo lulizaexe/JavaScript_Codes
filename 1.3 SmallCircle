@@ -1,0 +1,43 @@
+// White rectangle centered on the screen. Gray circle that updates its position according to the mouse, only within the central white rectangle.
+
+int x,y;
+
+void setup()
+{
+    size(600,600);
+    background(0);
+
+}
+
+​
+
+void draw()
+{
+ 
+
+  background(0);
+
+  fill(255);
+    rectMode(CENTER);
+    rect(width/2,height/2,400,400);
+  
+  fill(150);
+    ellipse(mouseX,mouseY,100,100);
+  }
+
+  
+//mouse
+void mouseMoved() {
+    if (mouseX <= 150) {
+      mouseX = x + 150;
+    }
+    if (mouseY <= 150) {
+      mouseY = y + 150;
+    }
+    if (mouseX >= 450) {
+      mouseX = x + 450;
+    }
+    if (mouseY >= 450) {
+      mouseY = y + 450;
+    }
+  }
