@@ -1,0 +1,82 @@
+// Three circles with random sizes, colors, and positions appear each time you play. //
+[File]
+
+Bola bola1, bola2, bola3;
+
+ 
+
+void setup()
+
+{
+  size(400,400);
+  
+  //criar bola1 
+  bola1 = new Bola();
+  
+  println(bola1.ToString());
+  
+  //criar bola2 
+  bola2 = new Bola();
+  
+  println(bola2.ToString());
+  
+  //criar bola3 
+  bola3 = new Bola();
+  
+  println(bola3.ToString());
+  
+}
+
+​
+
+void draw()
+
+{
+  background(0);
+  
+  //bola1
+  fill(255);
+  bola1.Desenha();
+  
+  //bola2
+  fill(255);
+  bola2.Desenha();
+  
+  //bola3
+  fill(255);
+  bola3.Desenha();
+  
+}
+
+[Class]
+
+class Bola 
+{  
+  //atributos
+  color cor;
+  float x;
+  float y;
+  float diametro;
+  
+  //metodos  
+  Bola()
+  {
+    cor = color (random(256),random(256),random(256));
+    x = (int)random(300);
+    y = (int)random(300);
+    diametro = (int)random(300);
+  }
+  
+  void Desenha() 
+  {
+    fill(cor);
+    ellipse(x, y, diametro, diametro);
+ 
+  }
+  
+ 
+
+  String ToString() {
+    return "|X:" + x + "|Y:" + y + "|o diâmetro é: " + diametro;
+  }
+}
