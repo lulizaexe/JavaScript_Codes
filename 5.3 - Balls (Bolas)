@@ -1,0 +1,101 @@
+// Three balls of random size and color that move to different positions with each new play, or update the clicked ball to generate a new one. //
+[File]
+
+Bola bola1, bola2, bola3;
+
+ 
+
+void setup()
+
+{
+  size(600,600);
+  
+  //criar bola1 
+  bola1 = new Bola();
+  bola1.nome = "Bola1";
+  println(bola1.ToString());
+  
+  //criar bola2 
+  bola2 = new Bola();
+  bola2.nome = "Bola2";
+  println(bola2.ToString());
+  
+  //criar bola3 
+  bola3 = new Bola();
+  bola3.nome = "Bola3";
+  println(bola3.ToString());
+  
+}
+
+​
+
+void draw(){
+  background(0);
+  
+  //circulo
+  bola1.Desenha();
+  bola1.atualiza();
+  
+  //circulo
+  bola2.Desenha();
+  bola2.atualiza();
+  
+  
+  //circulo
+  bola3.Desenha();
+  bola3.atualiza();
+  
+}
+
+​
+
+void mousePressed() {
+    
+    //detecta bola1
+    bola1.detecta();
+    bola1.sorteia();
+    println(bola1.ToString());
+    
+    //detecta bola2
+    bola2.detecta();
+    bola2.sorteia();
+    println(bola2.ToString());
+    
+    //detecta bola3
+    bola3.detecta();
+    bola3.sorteia();
+    println(bola3.ToString());
+    
+  }
+
+[Class]
+class Bola 
+{  
+  //atributos
+  color cor;
+  float x;
+  float y;
+  float diametro;
+  
+  //metodos  
+  Bola()
+  {
+    cor = color (random(256),random(256),random(256));
+    x = (int)random(300);
+    y = (int)random(300);
+    diametro = (int)random(300);
+  }
+  
+  void Desenha() 
+  {
+    fill(cor);
+    ellipse(x, y, diametro, diametro);
+ 
+  }
+  
+ 
+
+  String ToString() {
+    return "|X:" + x + "|Y:" + y + "|o diâmetro é: " + diametro;
+  }
+}
