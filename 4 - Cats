@@ -1,0 +1,63 @@
+// A rectangle representing a white cat named Felpudo appears randomly on the screen.
+[File]
+Gato Felpudo;
+
+ 
+
+void setup()
+
+{
+  size(400,400);
+    
+  Felpudo = new Gato();
+  Felpudo.nome = "Felpudo";
+  Felpudo.cor = "Branco";
+  
+  println(Felpudo.ToString());
+  
+}
+
+​
+
+void draw()
+
+{
+  background(0);
+  
+  //Felpudo
+  fill(255);
+  Felpudo.Desenha();
+  
+}
+
+[Class]
+class Gato 
+{  
+ 
+
+ //atributos
+  String nome;
+  String cor;
+  float x;
+  float y;
+
+ 
+
+ //metodos  
+  Gato()
+  {
+    nome = "";
+    cor = "";
+    x = (int)random(300);
+    y = (int)random(300);
+  }
+  
+  void Desenha() 
+  {
+    rect(x, y, 100, 50);
+  }
+
+  String ToString() {
+    return "nome:" + nome + "|X:" + x + "|Y:" + y + "|cor:" + cor;
+  }
+}
