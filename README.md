@@ -1,5 +1,5 @@
 # JavaScript_Codes
-Some code I found when I started studying JavaScript, around 2015.
+Some code I found when I started studying JavaScript, around 2015. All of these projects were developed using Processing software.
 
 1 Small Circle - White rectangle centered on the screen. Gray circle that updates its position with each new play, across the entire screen.
 1.2 Small Circle - White rectangle centered on the screen. Gray circle that updates its position every frame, only within the central white rectangle.
