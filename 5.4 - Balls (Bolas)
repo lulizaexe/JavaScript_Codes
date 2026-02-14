@@ -1,0 +1,74 @@
+// Three balls of random size and color that move to different positions with each new play, or refresh the clicked ball to generate a new one. Each time a ball is clicked, it adds one point to the Score. //
+[File]
+
+Forma f, e;
+
+​
+
+void setup()
+{
+  size(800,600);
+  background(0);
+  
+  f = new Forma();
+  f.Inicializa(100, 50, color(250,12,10));
+  e = new Ellipse();
+  e.Inicializa(120,120, color(255,120,10));
+  
+}
+
+void draw()
+{
+  background(0);
+  f.Desenha();
+  e.Desenha();
+}
+
+[Class Ellipse]
+public class Ellipse extends Forma
+{
+  
+  public void Desenha()
+  {
+    
+    noStroke();
+    fill(cor);
+    ellipse(x,y, largura, altura); 
+  }
+}
+
+[Class Form]
+
+public class Forma
+{
+  
+  //atributos   
+  protected float x;
+  public float y;
+  public float largura;
+  public float altura;
+  public color cor;
+  
+  //métodos
+  //construtor
+  
+  public Forma()
+  {
+    x = random(width);
+    y = random(height);
+    
+  }
+  
+  public void Inicializa(float l, float a , color c)
+  {
+    largura = l;
+    altura = a;
+    cor = c;
+  }
+  
+  public void Desenha()
+  {
+    println("Forma x: " + x + "Forma y: " + y);
+  }
+  
+}
