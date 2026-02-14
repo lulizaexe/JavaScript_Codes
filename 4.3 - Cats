@@ -1,0 +1,184 @@
+// If the mouse is pressed on a cat, show on the console which cat was pressed, whether it meowed, and make it run across the screen with each click.
+[File]
+
+Gato Felpudo, Frajola, Tom, Garfield;
+
+ 
+
+void setup()
+
+{
+  size(600,600);
+    
+  Felpudo = new Gato();
+  Felpudo.nome = "Felpudo";
+  Felpudo.cor = "Branco";
+  
+  println(Felpudo.ToString());
+  
+  Frajola = new Gato();
+  Frajola.nome = "Frajola";
+  Frajola.cor = "Preto";
+  
+  println(Frajola.ToString());
+  
+  Tom = new Gato();
+  Tom.nome = "Tom";
+  Tom.cor = "Cinza";
+  
+  println(Tom.ToString());
+  
+  Garfield = new Gato();
+  Garfield.nome = "Garfield";
+  Garfield.cor = "Laranja";
+  
+  println(Garfield.ToString());
+  
+}
+
+​
+
+void draw()
+
+{
+  background(0,0,255);
+  
+  //Felpudo
+  fill(255);
+  Felpudo.Desenha();
+  
+  //Frajola
+  fill(0);
+  Frajola.Desenha();
+  
+  //Tom
+  fill(190);
+  Tom.Desenha();
+  
+  //Garfield
+  fill(255,69,0);
+  Garfield.Desenha();
+}
+
+​
+
+  void mousePressed()
+
+{
+    
+    //Felpudo
+    Felpudo.Detecta();
+    Felpudo.Miar();
+    Felpudo.Correr();
+    println(Felpudo.ToString());
+    
+    //Frajola
+    Frajola.Detecta();
+    Frajola.Miar();
+    Frajola.Correr();
+    println(Frajola.ToString());
+    
+    //Tom
+    Tom.Detecta();
+    Tom.Miar();
+    Tom.Correr();
+    println(Tom.ToString());
+    
+    //Garfield
+    Garfield.Detecta();
+    Garfield.Miar();
+    Garfield.Correr();
+    println(Garfield.ToString());
+  }
+
+[Class]
+
+class Gato 
+{  
+
+
+  //atributos
+  String nome;
+  String cor;
+  float x;
+  float y;
+  boolean verdadeiro = false;
+  boolean miou = false;
+  String miar;
+  boolean correr = false;
+  String correu; 
+  float correrX;
+  float correrY;
+  
+  //metodos  
+  Gato()
+  {
+    nome = "";
+    cor = "";
+    x = (int)random(300);
+    y = (int)random(300);
+   correrX = (int)random(x);
+   correrY = (int)random(y);
+  }
+  
+void Desenha() 
+  {
+    rect(x, y, 100, 50);
+  }
+
+ 
+
+//mousepressed
+void Detecta()
+  {
+    if ((mouseX > x && mouseX < x + 100) &&
+      (mouseY > y && mouseY < y + 50))
+    {
+      verdadeiro = true;
+    } else
+    {
+      verdadeiro = false;
+    }
+  }
+
+​
+
+//miar
+void Miar()
+    {
+      if ((mouseX > x && mouseX < x + 100) &&
+        (mouseY > y && mouseY < y + 50))
+      {
+      miou = true;
+      miar = "miou";
+    } else
+    {
+      miou = false;
+      miar = "não miou";
+    }
+    }
+    
+//correr
+void Correr()
+    {
+      if ((mouseX > x && mouseX < x + 100) &&
+        (mouseY > y && mouseY < y + 50))
+      {
+      correr = true;
+      correu = "correu";
+      rect(x += correrX, y += correrY, x, y);
+    } else
+    {
+      correr = false;
+      correu = "não correu";
+    }
+      
+    }
+    String ToString() {
+      return "nome:" + nome + "|X:" + x + "|Y:" + y + "|cor:" + cor + "|teste" + verdadeiro + "|nome: " + nome + miar +
+
+"|correu: " +correu;
+
+
+    }
+  }
